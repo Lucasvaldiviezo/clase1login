@@ -1,20 +1,22 @@
-<h1>{{title}}</h1>
-<input [type]="miTipo" [(ngModel)]="title"><br>
-<input type="button" value = "cambiar titulo" (click)="mostrarAlert()">
-
-<h2>Sumar</h2>
-<input type="number" [(ngModel)]="miSuma.numero1">
-<label> + </label>
-<input type="number" [(ngModel)]="miSuma.numero2">
-<label> = </label>
-<input type="number" [value]="miSuma.total">
-<input type="button" value = "Sumar" (click)="miSuma.sumar()">
-
-<h2>Login</h2>
-<label>Usuario: </label>
-<input type="text" [(ngModel)]="miUsuario.usuario">
-<br>
-<label>Contraseña: </label>
-<input type="text" [(ngModel)]="miUsuario.password">
-<br>
-<input type="button" value = "Login" (click)="miUsuario.login()">
+<body>
+    <header>
+        <h1>Portal de Login</h1>
+    </header>
+    <main>
+        <form id="login_form" class="form_class" action="login/login-access.php" method="post">
+            <div class="form_div">
+                <label>Usuario:</label>
+                <input class="field_class" name="login_txt" type="text" placeholder="Ingrese su usuario" autofocus [(ngModel)]="miUsuario.usuario">
+                <label>Contraseña:</label>
+                <input id="pass" class="field_class" name="password_txt" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="miUsuario.password">
+                <button class="submit_class" type="submit" form="login_form" (click)="miUsuario.login()">Entrar</button>
+            </div>
+            <div class="info_div">
+                <p>Aun no esta registrado? <a href="register/reg-form.php">Registrese!</a></p>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>Desenvolvido por <a href="#">JM_Code&trade;</a></p>
+    </footer>
+</body>
